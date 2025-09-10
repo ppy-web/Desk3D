@@ -1,10 +1,16 @@
 import { useGLTF, useTexture } from "@react-three/drei";
 import textures from "../store/detail.js"
 import useConfigStore from "../store/configStore.js"
+import * as THREE from "three";
 const useTextureWithSettings =  (textureConfig)=> {
-    return useTexture({
+    const textureProps = useTexture({
         map: textureConfig.texture.map
     })
+    textureProps.map.repeat.set(4,4)
+    textureProps.map.rotation = Math.PI/2;
+    textureProps.map.wrapS = THREE.RepeatWrapping;
+    textureProps.map.wrapT = THREE.RepeatWrapping;
+    return textureProps
 }
 const Desk = () => {
   const deskConfig = useConfigStore();
