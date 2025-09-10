@@ -52,16 +52,20 @@ export const frameTypes = [
 
 export const frameColors = [
     {
-        id: '#303030',
-        name: '黑色',
+        id: '#565656',
+        name: '金属灰',
     },
     {
-        id: '#f0f0f0',
-        name: '白色',
+        id: '#ceb9a3',
+        name: '原木黄',
+    },
+    {
+        id: '#f8f8f8',
+        name: '菱花白',
     },
     {
         id: '#a0a0a0',
-        name: '灰色',
+        name: '典雅灰',
     },
 ]
 

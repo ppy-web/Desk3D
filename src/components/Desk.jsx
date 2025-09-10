@@ -23,28 +23,29 @@ const Desk = () => {
         <meshStandardMaterial {...woodTextureProps} roughness={0.3}/>
       </mesh>
         {/*桌腿*/}
-        <mesh geometry={nodes.IStand1.geometry} scale={[1, 1, 1]} position={nodes.IStand1.position}>
-            <meshStandardMaterial metalness={0.2} roughness={0.1}/>
+        <mesh geometry={nodes.IStand1.geometry} scale={[1, 1, 1]} position={nodes.IStand1.position} visible={deskConfig.frameType === "adjustable"}>
+            <meshStandardMaterial color={deskConfig.frameColor} metalness={0.2} roughness={0.1}/>
         </mesh>
-        <mesh geometry={nodes.IStand2.geometry} scale={[1, 1, 1]} position={nodes.IStand2.position}>
-            <meshStandardMaterial metalness={0.2} roughness={0.1}/>
+        <mesh geometry={nodes.IStand2.geometry} scale={[1, 1, 1]} position={nodes.IStand2.position}  visible={deskConfig.frameType === "adjustable"}>
+            <meshStandardMaterial color={deskConfig.frameColor} metalness={0.2} roughness={0.1}/>
         </mesh>
         {/*经典桌腿*/}
-        <mesh geometry={nodes.ClassicStand1.geometry} scale={[1, 1, 1]} position={nodes.ClassicStand1.position}>
-            <meshStandardMaterial metalness={0.2} roughness={0.1}/>
+        <mesh geometry={nodes.ClassicStand1.geometry} scale={[1, 1, 1]} position={nodes.ClassicStand1.position}   visible={deskConfig.frameType === "standard"}>
+            <meshStandardMaterial color={deskConfig.frameColor} metalness={0.6} roughness={0.8}/>
         </mesh>
-        <mesh geometry={nodes.ClassicStand2.geometry} scale={[1, 1, 1]} position={nodes.ClassicStand2.position}>
-            <meshStandardMaterial metalness={0.2} roughness={0.1}/>
+        <mesh geometry={nodes.ClassicStand2.geometry} scale={[1, 1, 1]} position={nodes.ClassicStand2.position}  visible={deskConfig.frameType === "standard"}>
+            <meshStandardMaterial color={deskConfig.frameColor} metalness={0.6} roughness={0.8}/>
         </mesh>
         {/*操控面板*/}
-        <mesh geometry={nodes.Panel.geometry} scale={[1, 1, 1]} position={nodes.Panel.position}>
-            <meshStandardMaterial metalness={0.2} roughness={0.1}/>
+        <mesh geometry={nodes.Panel.geometry} scale={[1, 1, 1]} position={nodes.Panel.position}  visible={deskConfig.electric}>
+            <meshStandardMaterial  color={deskConfig.frameColor} metalness={0.2} roughness={0.1}/>
         </mesh>
-        <mesh geometry={nodes.Wires.geometry} scale={[1, 1, 1]} position={nodes.Wires.position}>
-            <meshStandardMaterial metalness={0.2} roughness={0.1}/>
+        <mesh geometry={nodes.Wires.geometry} scale={[1, 1, 1]} position={nodes.Wires.position}  visible={deskConfig.electric}>
+            <meshStandardMaterial  color={deskConfig.frameColor} metalness={0.2} roughness={0.1}/>
         </mesh>
-        <mesh geometry={nodes.CrossBeam.geometry} scale={[1, 1, 1]} position={nodes.CrossBeam.position}>
-            <meshStandardMaterial metalness={0.2} roughness={0.1}/>
+        {/*横梁*/}
+        <mesh geometry={nodes.CrossBeam.geometry} scale={[1, 1, 1]} position={nodes.CrossBeam.position} visible={deskConfig.frameType === "adjustable"}>
+            <meshStandardMaterial  color={deskConfig.frameColor} metalness={0.2} roughness={0.1}/>
         </mesh>
     </group>
   );
