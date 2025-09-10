@@ -5,7 +5,7 @@ const Configurater = () => {
     const deskConfig = useConfigStore();
     return (
         <div className="flex flex-col h-full overflow-y-auto space-y-4 select-none">
-            <h2 className='font-semibold text-xl pl-2'>选择您喜欢的桌板</h2>
+            <h2 className='font-semibold text-xl pl-2'>选择您喜欢的桌面材质</h2>
             <hr/>
             <div className="flex flex-col">
                 {Object.values(textures).map(item=>{
@@ -33,6 +33,25 @@ const Configurater = () => {
                     )
                 })}
             </div>
+            <h2 className="font-semibold text-xl pl-2">选择您想要的桌面尺寸</h2>
+            <hr/>
+            <div className='flex mt-4'>
+                <span className="font-semibold text-sm pr-2">宽度: </span>
+                <input className='flex-1' type="range" min={110} max={200} step='2' value={deskConfig.length}
+                       onChange={(e)=>{
+                           deskConfig.setLength(e.target.value)
+                       }}
+                />
+            </div>
+            <div className='flex mt-4 mb-4'>
+                <span className="font-semibold text-sm pr-2">宽度: </span>
+                <input className='flex-1' type="range" min={50} max={100} step='2' value={deskConfig.width}
+                       onChange={(e)=>{
+                           deskConfig.setWidth(e.target.value)
+                       }}
+                />
+            </div>
+
             <h2 className="font-semibold text-xl pl-2">选择您喜欢的桌腿</h2>
             <hr/>
             <div className='flex flex-row justify-between'>
