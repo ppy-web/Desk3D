@@ -15,7 +15,7 @@ const useTextureWithSettings =  (textureConfig)=> {
 }
 const Desk = () => {
     const deskConfig = useConfigStore();
-    const { nodes } = useGLTF("/models/desk.glb");
+    const { nodes } = useGLTF(`${import.meta.env.VITE_BASE_URL}models/desk.glb`);
     const woodTextureProps = useTextureWithSettings(textures[deskConfig.topMaterial])
     const computedLengthRatio = useMemo(() => (deskConfig.length / deskConfig.defaultLength), [deskConfig.length, deskConfig.defaultLength])
     const computedWidthRatio = useMemo(() => (deskConfig.width / deskConfig.defaultWidth), [deskConfig.width, deskConfig.defaultWidth])
