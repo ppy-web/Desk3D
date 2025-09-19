@@ -7,7 +7,7 @@ import {Suspense} from "react";
 function App() {
   return (
     <div className="fixed inset-0 flex flex-col md:flex-row">
-        <div className="noisy md:w-3/5 md:h-full w-full h-1/3">
+        <div className="md:w-3/5 md:h-full w-full h-1/3">
             <Canvas>
                 <Suspense  fallback={null}>
                     <Exoperience />

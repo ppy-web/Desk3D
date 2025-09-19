@@ -34,6 +34,28 @@ const textures = {
             map: `${import.meta.env.VITE_BASE_URL}/textures/walnut_diff_1k.jpg`,
         }
     },
+    nilu: {
+        id: 'nilu',
+        name: '原神-妮露',
+        texture: {
+            map: `${import.meta.env.VITE_BASE_URL}/textures/nilu.jpg`,
+        }
+    },
+    prince: {
+        id: 'prince',
+        name: '动漫主题-小王子',
+        texture: {
+            map: `${import.meta.env.VITE_BASE_URL}/textures/prince.jpg`,
+        }
+    },
+    blueair: {
+        id: 'blueair',
+        name: '蓝发女孩',
+        texture: {
+            map: `${import.meta.env.VITE_BASE_URL}/textures/blueair.jpg`,
+        },
+        col: true
+    },
 
 }
 

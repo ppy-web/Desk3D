@@ -7,8 +7,9 @@ const useTextureWithSettings =  (textureConfig)=> {
     const textureProps = useTexture({
         map: textureConfig.texture.map
     })
-    textureProps.map.repeat.set(4,4)
-    textureProps.map.rotation = Math.PI/2;
+    const repeat = textureConfig.texture.col ? [4,2] : [2,4] 
+    textureProps.map.repeat.set( repeat[0], repeat[1] )
+    textureProps.map.rotation = Math.PI;
     textureProps.map.wrapS = THREE.RepeatWrapping;
     textureProps.map.wrapT = THREE.RepeatWrapping;
     return textureProps
@@ -23,7 +24,7 @@ const Desk = () => {
     <group dispose={null}>
       {/*  桌板*/}
       <mesh geometry={nodes.Top.geometry} scale={[computedLengthRatio,1,computedWidthRatio]} position={nodes.Top.position}>
-        <meshStandardMaterial {...woodTextureProps} roughness={0.3}/>
+        <meshStandardMaterial {...woodTextureProps} roughness={1}/>
       </mesh>
         {/*桌腿*/}
         <mesh geometry={nodes.IStand1.geometry} position={nodes.IStand1.position} visible={deskConfig.frameType === "adjustable"}>
